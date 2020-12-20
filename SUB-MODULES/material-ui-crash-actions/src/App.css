@@ -1,0 +1,18 @@
+body, #root, *::after, *::before{
+  margin: 77px;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  color: white !important;
+}
+.App{
+  display: flex;
+  flex-direction: column;
+}
