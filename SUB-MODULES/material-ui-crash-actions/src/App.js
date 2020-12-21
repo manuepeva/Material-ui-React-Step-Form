@@ -12,6 +12,16 @@ import {green, purple} from '@material-ui/core/colors'
 import 'fontsource-roboto'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
+import ContainerCmp from './components/ContainerCmp'
+import { Container, Toolbar } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import AppBar from '@material-ui/core/AppBar'
+import ToolBar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+
+
 
 const useStyles = makeStyles({
   root:{
@@ -72,10 +82,36 @@ function CheckboxExample(){
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Container maxWidth="lg">
     <div className="App">
+      <AppBar color="primary">
+        <Toolbar>
+          <IconButton>
+            <MenuIcon/>
+          </IconButton>
+          <Typography variant="h6">
+            MUI Themeing
+          </Typography>
+          <Button>
+            Login
+          </Button>
+        </Toolbar>
+      </AppBar>
       <Typography variant="h3">Welcome to MUI</Typography>
       <Typography variant="subtitle" component="div">Learn MUI</Typography>
+      <ContainerCmp />
       <ButtonStyled />
+      <Grid container spacing={1} justify="center">
+      <Grid item xs={12} sm={6}>
+      <Paper style={{height:'75px', width: '50px', width: '100%'}}/>
+      </Grid>
+      <Grid item xs={3}>
+      <Paper style={{height:'75px', width: '50px', width: '100%'}}/>
+      </Grid>
+      <Grid item xs={3}>
+      <Paper style={{height:'75px', width: '50px', width: '100%'}}/>
+      </Grid>
+      </Grid>
       <TextField 
       variant="filled"
       color="secondary"
@@ -97,6 +133,7 @@ function App() {
      </Button>
      </ButtonGroup>
     </div>
+    </Container>
     </ThemeProvider>
   );
 }
