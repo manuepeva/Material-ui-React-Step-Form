@@ -15,4 +15,5 @@ input {
 .App{
   display: flex;
   flex-direction: column;
+  background-color: lightsalmon;
 }
