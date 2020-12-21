@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import FormUserD from "./formUserD/FormUserD";
+import FormUserD from "./formUserD/FormUserD"
+import FormPersonalD from './formPersonalD/FormPersonalD'
+import Confirm from './confirm/Confirm'
+
 export default class UserForm extends Component {
     state = {
         step: 1,
@@ -45,9 +48,19 @@ export default class UserForm extends Component {
                 />
             )
             case 2:
-            return  <h1>Form</h1>
+            return  (
+                <FormPersonalD 
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                values={values}
+                />
+            )
             case 3:
-            return <h1>confirmation</h1>
+            return (
+                <Confirm 
+                
+                />
+            )
             case 4:
             return <h1>Success</h1>
 

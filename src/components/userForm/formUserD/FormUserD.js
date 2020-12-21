@@ -4,6 +4,23 @@ import AppBar from '@material-ui/core/AppBar/AppBar'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import layout from './stylesFormUD.module.css'
+import Container from '@material-ui/core/Container'
+import {createMuiTheme} from '@material-ui/core/styles'
+import {green, salmon} from '@material-ui/core/colors'
+import {Toolbar, IconButton, Typography} from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/Menu'
+
+
+const theme = createMuiTheme({
+    container: {
+        marginTop: '3rem'
+    },
+    palette:{
+        primary: {
+            main: green[400]
+        }
+    }
+})
 
 class FormUserD extends Component {
     continue  =  e => {
@@ -14,13 +31,18 @@ class FormUserD extends Component {
         const {values, handleChange} = this.props
 
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider theme={theme}>
                 <React.Fragment>
                     <AppBar>
-                        <h1>Enter User Details</h1>
+                    <Toolbar>
+                        <IconButton>
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" style={{marginLeft: '30%'}}>Enter User Details</Typography>
+                    </Toolbar>
                     </AppBar>
+                    <Container fixed style={{marginTop: '9%', marginLeft: '36%'}}>
                     <br />
-                    <div className="fields">
                     <TextField 
                     label="Enter Your First Name"
                     floatingLabelText="First Name"
@@ -48,8 +70,9 @@ class FormUserD extends Component {
                     style={styles.button}
                     variant="contained"
                     onClick={this.continue}
-                    />
-                    </div>
+                    variant="contained"
+                    >Continue</Button>
+                    </Container>
                 </React.Fragment>
             </MuiThemeProvider>
         )
