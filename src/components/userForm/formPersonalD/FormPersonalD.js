@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import {ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar/AppBar'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import {createMuiTheme} from '@material-ui/core/styles'
-import {green, salmon} from '@material-ui/core/colors'
+import {green, purple} from '@material-ui/core/colors'
 import {Toolbar, IconButton, Typography} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
@@ -16,7 +16,10 @@ const theme = createMuiTheme({
     },
     palette:{
         primary: {
-            main: green[400]
+            main: green[500]
+        },
+        secondary: {
+            main: purple[500]
         }
     }
 })
@@ -39,7 +42,7 @@ class FormPersonalD extends Component {
     }
     render() {
         const {values, handleChange} = this.props
-
+        console.log(values, 'values from fpd')
         return (
             <MuiThemeProvider theme={theme}>
                 <React.Fragment>
@@ -55,21 +58,21 @@ class FormPersonalD extends Component {
                     <br />
                     <TextField 
                     label="Enter Your Occupation"
-                    floatingLabelText="Occupation"
+                    floatinglabeltext="Occupation"
                     onChange={handleChange('occupation')}
                     defaultValue={values.occupation}
                     />
                     <br />
                     <TextField 
                     label="Enter Your City"
-                    floatingLabelText="City"
+                    floatinglabeltext="City"
                     onChange={handleChange('city')}
                     defaultValue={values.city}
                     />
                     <br />
                     <TextField 
                     label="Enter Your Bio"
-                    floatingLabelText="Bio"
+                    floatinglabeltext="Bio"
                     onChange={handleChange('bio')}
                     defaultValue={values.bio}
                     />
@@ -84,7 +87,7 @@ class FormPersonalD extends Component {
                     >Continue</Button>
                     <Button 
                     label="Back"
-                    color="primary"
+                    color="secondary"
                     style={styles.button}
                     variant="contained"
                     onClick={this.back}

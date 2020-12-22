@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import {ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar/AppBar'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import layout from './stylesFormUD.module.css'
 import Container from '@material-ui/core/Container'
 import {createMuiTheme} from '@material-ui/core/styles'
-import {green, salmon} from '@material-ui/core/colors'
+import {green, yellow} from '@material-ui/core/colors'
 import {Toolbar, IconButton, Typography} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
@@ -18,6 +18,9 @@ const theme = createMuiTheme({
     palette:{
         primary: {
             main: green[400]
+        },
+        secondary: {
+            main: yellow[200]
         }
     }
 })
@@ -45,28 +48,31 @@ class FormUserD extends Component {
                     <br />
                     <TextField 
                     label="Enter Your First Name"
-                    floatingLabelText="First Name"
-                    onChange={handleChange('First Name')}
+                    floatinglabeltext="First Name"
+                    onChange={handleChange('firstName')}
                     defaultValue={values.firstName}
+                    required
                     />
                     <br />
                     <TextField 
                     label="Enter Your Last Name"
-                    floatingLabelText="Last Name"
-                    onChange={handleChange('Last Name')}
+                    floatinglabeltext="Last Name"
+                    onChange={handleChange('lastName')}
                     defaultValue={values.lastName}
+                    required
                     />
                     <br />
                     <TextField 
                     label="Enter Your Email"
-                    floatingLabelText="Email"
-                    onChange={handleChange('Email')}
+                    floatinglabeltext="Email"
+                    onChange={handleChange('email')}
                     defaultValue={values.email}
+                    required
                     />
                     <br />
                     <Button 
                     label="Continue"
-                    primary={true}
+                    color="primary"
                     style={styles.button}
                     variant="contained"
                     onClick={this.continue}
