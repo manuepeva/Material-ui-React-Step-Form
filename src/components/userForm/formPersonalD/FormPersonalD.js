@@ -31,6 +31,12 @@ class FormPersonalD extends Component {
         e.preventDefault()
         this.props.prevStep()
     }
+    // Handle fields change
+    handleChange = input => e => {
+          this.setState({
+              [input]: e.target.value
+           })
+    }
     render() {
         const {values, handleChange} = this.props
 

@@ -6,9 +6,9 @@ import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import {createMuiTheme} from '@material-ui/core/styles'
 import {green, salmon} from '@material-ui/core/colors'
-import {Toolbar, IconButton, Typography} from '@material-ui/core'
+import {Toolbar, IconButton, Typography, ListItemText} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
-import {ListItem} from '@material-ui/core/ListItem'
+import {ListItem, List} from '@material-ui/core'
 
 const theme = createMuiTheme({
     Container: {
@@ -27,9 +27,14 @@ class Confirm extends Component {
         // Process Form
         this.props.nextStep()
     }
+    back  =  e => {
+        e.preventDefault()
+        this.props.prevStep()
+    }
     render() {
         const {values: {firstName, lastName, email, occupation,
         city, bio}} = this.props
+        console.log(this.props, 'props')
 
         return (
             <MuiThemeProvider theme={theme}>
@@ -43,16 +48,41 @@ class Confirm extends Component {
                     </Toolbar>
                     </AppBar>
                     <Container fixed style={{marginTop: '9%', marginLeft: '36%'}}>
-                    
+                    <List>
+                        <ListItemText 
+                        primary="First Name"
+                        secondary={firstName}
+                        />
+                        {/* <ListItem 
+                        primaryText="Last Name"
+                        secondaryText={lastName}
+                        />
+                        <ListItem 
+                        primaryText="Email"
+                        secondaryText={email}
+                        />
+                        <ListItem 
+                        primaryText="Occupation"
+                        secondaryText={occupation}
+                        />
+                        <ListItem 
+                        primaryText="City"
+                        secondaryText={city}
+                        />
+                        <ListItem 
+                        primaryText="Bio"
+                        secondaryText={bio}
+                        /> */}
+                    </List>
                     <Button 
-                    label="Continue"
+                    label="Confirm & Continue"
                     color="primary"
                     style={styles.button}
                     variant="contained"
                     onClick={this.continue}
                     variant="contained"
                     >Continue</Button>
-                    <Button 
+                      <Button 
                     label="Back"
                     color="primary"
                     style={styles.button}
