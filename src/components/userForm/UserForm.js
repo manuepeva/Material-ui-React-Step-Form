@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FormUserD from "./formUserD/FormUserD"
 import FormPersonalD from './formPersonalD/FormPersonalD'
 import Confirm from './confirm/Confirm'
+import Success from './success/Success'
 
 export default class UserForm extends Component {
     state = {
@@ -36,8 +37,8 @@ export default class UserForm extends Component {
 
     render() {
         const {step} = this.state
-        const {firstName, lastName, email, ocupation, city, bio} = this.state
-        const values = {firstName, lastName, email, ocupation, city, bio}
+        const {firstName, lastName, email, occupation, city, bio} = this.state
+        const values = {firstName, lastName, email, occupation, city, bio}
         switch(step){
             case 1:
             return (
@@ -66,8 +67,7 @@ export default class UserForm extends Component {
                 />
             )
             case 4:
-            return <h1>Success</h1>
-
+            return <Success />
         }
     }
 }
