@@ -3,96 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlexBox CSS</title>
+    <title>CSS FlexBox</title>
     <style>
-        #root{
-            margin: 15px;
+        .container{
             background-color: red;
+            margin-top: 20px;
         }
         .row{
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
             width: 100%;
+            flex-wrap: wrap;
         }
         .column{
             display: flex;
             flex-direction: column;
             flex-basis: 100%;
         }
-        .blue-column{
+        .bg-blue{
             background-color: blue;
-            height: 100px;
+            height: 10vh;
         }
-        .green-column{
+        .bg-green{
             background-color: green;
-            height: 100px;
+            height: 10vh;
         }
-        .orange-column{
-            background-color: orange;
-            height: 100px;
+        .bg-red{
+            background-color: red;
+            height: 10vh;
         }
-        .double-column{
-            display: flex;
-            flex-direction: column;
-            flex-basis: 100%;
+        .bg-pink{
+            background-color: pink;
+            height: 10vh;
+        }
+        .bg-yellow{
+            background-color: yellow;
+            height: 10vh;
+        }
+        .bg-purple{
+            background-color: purple;
+            height: 10vh;
         }
         @media screen and (min-width: 800px){
             .column{
-                flex: 1;
-            }
-            .double-column{
                 flex: 2;
+            }
+            .row{
+                flex: 1;
             }
         }
     </style>
 </head>
 <body>
-    <div id="root">
+    <div class="container">
         <div class="row">
             <div class="column">
-                <div class="blue-column">
-                    Blue
+                <div class="bg-blue">
+                    Background Blue
                 </div>
             </div>
             <div class="column">
-                <div class="green-column">
-                    Green
+                <div class="bg-pink">
+                    Background Blue
                 </div>
             </div>
             <div class="column">
-                <div class="orange-column">
-                    Orange
+                <div class="bg-green">
+                    Background Green
+                </div>
+            </div>
+            <div class="column">
+                <div class="bg-red">
+                    Background Red
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="column">
+                <div class="bg-pink">
+                    Background Pink
+                </div>
+            </div>
+            <div class="column">
+                <div class="bg-yellow">
+                    Background Yellow
+                </div>
+            </div>
+            <div class="column">
+                <div class="bg-purple">
+                    Background Purple
                 </div>
             </div>
         </div>
-        <div class="row 2">
-            <div class="column">
-                <div class="orange-column">
-                    Orange
-                </div>
+      </div>
+      <div class="row">
+        <div class="column">
+            <div class="bg-blue">
+                Background Blue
             </div>
-            <div class="column">
-                <div class="blue-column">
-                    Blue
-                </div>
+        </div>
+        <div class="column">
+            <div class="bg-green">
+                Background Green
             </div>
-            <div class="column">
-                <div class="green-column">
-                    Green
-                </div>
+        </div>
+        <div class="column">
+            <div class="bg-red">
+                Background Red
             </div>
+        </div>
         </div>
         <div class="row">
-            <div class="double-column">
-                <div class="green-column">
-                    Double Blue Column
-                </div>
-            </div>
-            <div class="column">
-                Class column
+        <div class="column">
+            <div class="bg-pink">
+                Background Pink
             </div>
         </div>
+        <div class="column">
+            <div class="bg-yellow">
+                Background Yellow
+            </div>
+        </div>
+        <div class="column">
+            <div class="bg-purple">
+                Background Purple
+            </div>
+        </div>
+        <div class="column">
+            <div class="bg-green">
+                Background Purple
+            </div>
+        </div>
+        <div class="column">
+            <div class="bg-red">
+                Background Purple
+            </div>
+        </div>
+        <div class="column">
+            <div class="bg-yellow">
+                Background Purple
+            </div>
+        </div>
+        <div class="column">
+            <div class="bg-green">
+                Background Purple
+            </div>
+        </div>
+        <div class="column">
+            <div class="bg-red">
+                Background Purple
+            </div>
+        </div>
+        <div class="column">
+            <div class="bg-yellow">
+                Background Purple
+            </div>
+        </div>
+    </div>
+  </div>
     </div>
 </body>
 </html>
