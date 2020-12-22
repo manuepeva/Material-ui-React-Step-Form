@@ -52,13 +52,17 @@ export default class UserForm extends Component {
                 <FormPersonalD 
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
+                handleChange={this.handleChange}
                 values={values}
                 />
             )
             case 3:
             return (
                 <Confirm 
-                
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
                 />
             )
             case 4:

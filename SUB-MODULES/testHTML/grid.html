@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox CSS</title>
+    <style>
+        #root{
+            margin: 15px;
+            background-color: red;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .column{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+        }
+        .blue-column{
+            background-color: blue;
+            height: 100px;
+        }
+        .green-column{
+            background-color: green;
+            height: 100px;
+        }
+        .orange-column{
+            background-color: orange;
+            height: 100px;
+        }
+        .double-column{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+        }
+        @media screen and (min-width: 800px){
+            .column{
+                flex: 1;
+            }
+            .double-column{
+                flex: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="row">
+            <div class="column">
+                <div class="blue-column">
+                    Blue
+                </div>
+            </div>
+            <div class="column">
+                <div class="green-column">
+                    Green
+                </div>
+            </div>
+            <div class="column">
+                <div class="orange-column">
+                    Orange
+                </div>
+            </div>
+        </div>
+        <div class="row 2">
+            <div class="column">
+                <div class="orange-column">
+                    Orange
+                </div>
+            </div>
+            <div class="column">
+                <div class="blue-column">
+                    Blue
+                </div>
+            </div>
+            <div class="column">
+                <div class="green-column">
+                    Green
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="double-column">
+                <div class="green-column">
+                    Double Blue Column
+                </div>
+            </div>
+            <div class="column">
+                Class column
+            </div>
+        </div>
+    </div>
+</body>
+</html>
